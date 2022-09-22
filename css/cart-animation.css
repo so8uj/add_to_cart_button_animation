@@ -1,0 +1,218 @@
+:root {
+    --cart-background: #448982;
+    --cart-color: #fff;
+}
+
+.cart-button-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-button-container .cart-btn {
+    background: none;
+    border: none;
+    position: relative;
+}
+
+.button_content {
+    background: var(--cart-background);
+    color: var(--cart-color);
+    /* padding: 12px 30px; */
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    height: 40px;
+    width: 150px;
+    z-index: 1;
+}
+
+.icon-cart {
+    fill: #fff;
+    width: 20px;
+    height: 30px;
+    position: absolute;
+    left: 25px;
+
+}
+.icon-full-cart{
+    position: absolute;
+    fill: #fff;
+    width: 20px;
+    height: 30px;
+    left: 25px;
+    opacity: 0;
+}
+.icon-box {
+    position: absolute;
+    fill: #448982;
+    width: 15px;
+    height: 20px;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.icon-box-drop{
+    position: absolute;
+    fill: #fff;
+    width: 15px;
+    height: 20px;
+    top: -17px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -99;
+    opacity: 0;
+}
+.icon-cart-body {
+    position: absolute;
+    fill: #fff;
+    width: 28px;
+    height: 33px;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%) scaleY(0);
+    z-index: -1;
+    transform-origin: top;
+    
+}
+.adding_to_cart .icon-box {
+    animation: box-cart-animation ease .8s;
+    animation-delay: .5s;
+}
+.adding_to_cart .icon-box-drop{
+    animation: drop-box ease .4s;
+    animation-delay: 1s;
+}
+.adding_to_cart .card-body{
+    animation: cart-body .2s;
+    animation-delay: 1.2s;
+}
+.adding_to_cart .icon-full-cart{
+    animation: full-card-animation 3.3s;
+}
+.adding_to_cart .icon-cart{
+    animation: cart-opacity 3.3s;
+}
+.btn-text {
+    margin-left: 20px;
+    transition: .2s ease-out;
+    opacity: 1;
+}
+.adding_to_cart .btn-text{
+    opacity: 0;
+    transition: .2s ease-out;
+}
+@keyframes text-animation{
+    0%{
+        opacity: .8;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes cart-opacity {
+    
+    20%,25%,35%,41%,45%,49%{
+        left:50%;
+        transform:translateX(-50%) scale(1.2);
+        opacity: 1;
+    }
+
+    50%,58%{
+        transform:translateX(-50%) scale(1.2) rotate(-10deg);
+        opacity: 0;
+        
+    }
+    70%{
+        left: 120%;
+        opacity: 0;
+    }
+    75%{
+        left: 130%;
+        opacity: 0;
+    }
+    77%{
+        left: -20%;
+        opacity: 0;
+    }
+    78%,89%,100% {
+        left: 25px;
+        opacity: 1;
+        transition: 1s;
+        
+    }
+}
+@keyframes full-card-animation{
+    20%,25%,35%,41%,45%,49%{
+        left:50%;
+        transform:translateX(-50%) scale(1.2);
+        opacity: 1;
+    }
+
+    50%,58%{
+        transform:translateX(-50%) scale(1.2) rotate(-10deg);
+        opacity: 1;
+        
+    }
+    70%{
+        left: 120%;
+        opacity: 1;
+    }
+    75%{
+        left: 130%;
+        opacity: 0;
+    }
+    77%{
+        left: -20%;
+        opacity: 0;
+    }
+    78%,89%,100% {
+        left: 25px;
+        opacity: 0;
+        
+    }
+}
+@keyframes box-cart-animation {
+    0% {
+        top: 0px;
+    }
+    50%{
+        top: -60px;
+        transform: scale(1.4);
+    }
+    100% {
+        top: 0px;
+        
+    }
+
+}
+@keyframes drop-box{
+   
+    0% {
+        top: -17px;
+    }
+    100% {
+        opacity: 1;
+        top: 0px;
+    }
+}
+@keyframes cart-body{
+
+    0%{
+        transform: translateX(-50%) scaleY(0);
+    }
+    100%{
+        transform: translateX(-50%) scaleY(1);
+    }
+    
+}
+
